@@ -4,6 +4,15 @@ import { FaDownload } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
 
 const Cards = ({ data }) => {
+
+  const colorClasses = {
+    green: "bg-green-500",
+    blue: "bg-blue-500",
+    red: "bg-red-500",
+    yellow: "bg-yellow-500",
+    purple: "bg-purple-500",
+  };
+  
   return (
     <div className="relative bg-zinc-800 w-56 h-72 rounded-4xl py-10 px-5 text-white   overflow-hidden">
       <FaRegFileAlt />
@@ -18,8 +27,8 @@ const Cards = ({ data }) => {
         </div>
 
         {data.tag.isOpen ? (
-          <div className="w-full h-14 bg-green-500 flex items-center justify-center">
-            <h3 className="text-sm font-semibold"></h3>
+          <div className={`w-full h-14 ${colorClasses[data.tag.tagColor]} flex items-center justify-center`}>
+            <h3 className="text-sm font-semibold">{data.tag.tagTitle}</h3>
           </div>
         ) : null}
       </div>
