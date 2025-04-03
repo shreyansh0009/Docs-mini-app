@@ -1,18 +1,32 @@
-import React from 'react'
+import React from "react";
 import { FaRegFileAlt } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 
 const Cards = () => {
   return (
-    <div className='relative bg-zinc-500 w-56 h-72 rounded-4xl py-10 px-5 text-white  cursor-pointer overflow-hidden'>
-        <FaRegFileAlt />
-        <p className='mt-5 font-semibold text-md leading-tight'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id enim odit dolore dignissimos aliquid cum?</p>
+    <div className="relative bg-zinc-800 w-56 h-72 rounded-4xl py-10 px-5 text-white   overflow-hidden">
+      <FaRegFileAlt />
+      <p className="mt-3 font-semibold text-md leading-tight">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id enim odit
+        dolore dignissimos aliquid cum?
+      </p>
 
-        <div className="w-full h-18 absolute bottom-0 left-0 bg-sky-400">
-
+      <div className="absolute bottom-0 w-full left-0">
+        <div className="flex items-center justify-between px-5 w-full h-10 absolute bottom-0 left-0 mb-14">
+          <h5>0.4mb</h5>
+          <span className="pr-2 cursor-pointer">
+            <FaDownload />
+          </span>
         </div>
 
-    </div>
-  )
-}
+        <div className="w-full h-14 bg-green-500 flex items-center justify-center">
 
-export default Cards
+          <h3 className="text-sm font-semibold">Download Now</h3>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Cards;
