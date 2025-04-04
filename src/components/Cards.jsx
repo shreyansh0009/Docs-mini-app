@@ -28,7 +28,7 @@ const Cards = ({ data }) => {
 
         {data.tag.isOpen ? (
           <div className={`w-full h-14 ${colorClasses[data.tag.tagColor]} flex items-center justify-center`}>
-            <h3 className="text-sm font-semibold">{data.tag.tagTitle}</h3>
+            <h3 className="text-sm font-semibold cursor-pointer">{data.tag.tagTitle}</h3>
           </div>
         ) : null}
       </div>
