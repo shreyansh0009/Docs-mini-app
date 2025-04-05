@@ -2,9 +2,9 @@ import React from "react";
 import { FaRegFileAlt } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
+import { motion } from "motion/react";
 
-const Cards = ({ data }) => {
-
+const Cards = ({ data, reference }) => {
   const colorClasses = {
     green: "bg-green-500",
     blue: "bg-blue-500",
@@ -12,9 +12,17 @@ const Cards = ({ data }) => {
     yellow: "bg-yellow-500",
     purple: "bg-purple-500",
   };
-  
+
   return (
-    <div className="relative bg-zinc-800 w-56 h-72 rounded-4xl py-10 px-5 text-white   overflow-hidden">
+    <motion.div
+      drag
+      dragConstraints={reference}
+      whileHover={{scale: 1.05}}
+      whileDrag={{ scale: 1.25 }}
+      dragElastic={0.2}
+      dragTransition={{bounceStiffness: 500, bounceDamping: 120}}
+      className="relative bg-zinc-800 w-56 h-72 rounded-4xl py-10 px-5 text-white   overflow-hidden"
+    >
       <FaRegFileAlt />
       <p className="mt-3 font-semibold text-md leading-tight">{data.desc}</p>
 
@@ -27,12 +35,16 @@ const Cards = ({ data }) => {
         </div>
 
         {data.tag.isOpen ? (
-          <div className={`w-full h-14 ${colorClasses[data.tag.tagColor]} flex items-center justify-center cursor-pointer;`}>
+          <div
+            className={`w-full h-14 ${
+              colorClasses[data.tag.tagColor]
+            } flex items-center justify-center cursor-pointer;`}
+          >
             <h3 className="text-sm font-semibold">{data.tag.tagTitle}</h3>
           </div>
         ) : null}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
