@@ -15,7 +15,7 @@ Get started with Docs-mini-app in minutes!
    ```bash
    cd Docs-mini-app
    ```
-3. 4. **Install Dependencies..**
+3. **Install Dependencies..**
    ```bash
    npm i
    ```
